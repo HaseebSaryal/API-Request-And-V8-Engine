@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    button{
+        margin-top: 200px;
+        padding: 40px;
+        gap: 20px;
+    }
+</style>
+<body>
+    <button id="button">
+        to know followers
+    </button>
+    
+    <button id="btn">
+        get ID
+    </button>
+    <h2>
+
+    </h2>
+
+
+
+
+
+
+    <script>
+        let sayfun;
+        document.querySelector("#btn").addEventListener("click", ()=>{
+            sayfun()
+        })
+    document.querySelector("#button").addEventListener("click", ()=>{
+        const sayfun = function getApi(){
+            const urll = 'https://api.github.com/users/hiteshchoudhary  '
+        const apiCall = new XMLHttpRequest();
+        apiCall.open("GET", urll);
+        apiCall.onreadystatechange = function(){
+            console.log(apiCall.readyState);
+            if(apiCall.readyState === 4){
+                const data = JSON.parse(this.responseText)
+                console.log(data)
+            }
+        }
+        apiCall.send();
+        }
+        console.log(sayfun())
+
+   
+        
+      
+
+
+    });
+  
+       
+    </script>
+</body>
+</html>
